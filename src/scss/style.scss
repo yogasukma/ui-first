@@ -8,3 +8,349 @@
 @import "../../node_modules/bootstrap/scss/containers";
 @import "../../node_modules/bootstrap/scss/grid";
 @import "../../node_modules/bootstrap/scss/utilities/api";
+
+$primary: #1aa859;
+
+header {
+    &.sticky {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 99999;
+    }
+    padding: 10px 0;
+    background: $white;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+    &.navbar > .container {
+        justify-content: center;
+        @include media-breakpoint-up(md) {
+            justify-content: space-between;
+        }
+    }
+    .navbar-brand {
+        display: flex;
+        img {
+            height: 50px;
+            margin-right: 10px;
+        }
+    }
+    h1 {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-top: 3px;
+        span {
+            display: block;
+            font-weight: normal;
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+        @include media-breakpoint-up(md) {
+            margin-top: 0px;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+        }
+    }
+}
+
+body {
+    background-color: $gray-100;
+    padding-top: 100px;
+}
+
+#banner {
+    border-radius:5px;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+#main {
+    margin-top: 30px;
+    section.row {
+        margin-bottom: 30px;
+    }
+}
+
+section {
+    header {
+        padding: 10px 0;
+        background: transparent;
+        border-bottom: none;
+        margin-bottom: 10px;
+        .section-title {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+            &.bordered {
+                border-bottom: 5px solid $primary;
+                padding-bottom: 15px;
+            }
+        }
+    }
+    figure {
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0px 2px 6px #999; 
+        }
+    }
+}
+
+.card {
+    .card-title {
+        text-transform: uppercase;
+        font-size: 0.9rem;
+    }
+
+    @include media-breakpoint-down(md) {
+        margin-bottom: 10px;
+    }
+
+    &#recent-news {
+        background: $primary;
+        color: $white;
+        a {
+            color: $white;
+        }
+        span.date {
+            color: $warning;
+        }
+    }
+}
+
+.card#harga {
+    img {
+        box-shadow: none;
+    }
+    .items .item {
+        margin-bottom: 0;
+    }
+}
+
+.card#poll {
+    background-color: $primary;
+    label {
+        color: #fff;
+    }
+}
+
+section#artikel {
+    margin-bottom: 50px;
+    header span {
+        color: $primary;
+    }
+}
+
+section#download {
+    background-image: url('img/archives.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 50px 0;
+    position: relative;
+    display: none;
+    @include media-breakpoint-up(md) { 
+        display: block;
+     }
+    .layer {
+        background-color: rgba(#000, 80%);
+        width: 100%;
+        height: 100%;
+        position: absolute; 
+        top: 0
+    }
+    .container {
+        position: relative;
+    }
+    header {
+        text-align: center;
+        color: $light
+    }
+    img {
+        max-width: 100%;
+    }
+}
+
+section#links {
+    background: $white;
+    padding-top: 30px;
+    header {
+        text-align: center;
+    }
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        img {
+            width: 90%;
+            margin: 10px auto;
+            height: auto;
+            margin-bottom: 50px;
+            @include media-breakpoint-up(md) { width: 200px; margin: 10px; }
+        }  
+    }
+}
+
+div.white-section {
+    background: $white;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    border-top: 1px solid;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    .row {
+        margin-bottom: 0 !important;
+        flex-direction: column;
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+        }
+    }
+}
+
+section#seputar {
+    header span {
+        color: $primary;
+    }
+    .items .item {
+        margin-bottom: 40px;
+        @include media-breakpoint-up(md) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.items {
+    .item {
+        margin-bottom: 20px;
+    }
+    .item-title {
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+    span.date {
+        font-size: 0.8rem;
+        display: inline-block;
+        margin-right: 10px;
+        color: $primary;
+    }
+    span.location {
+        font-size: 0.8rem;
+    }
+    &.list {
+        .item { 
+            display: flex;
+            figure {
+                width: 30%;
+            }
+            .content {
+                padding-top: 5px;
+            }
+            h3 {
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+    &.aside {
+        display: flex;
+        flex-direction: column;
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+        }
+        .featured {
+            position: relative;
+            width: 50%;
+            background-position: center left;
+            margin-right: 30px;
+            border-radius: 4px;
+            box-shadow: 0px 2px 6px #999; 
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                height: 200px;
+                margin-bottom: 40px;
+            }
+
+            .item {
+                position: absolute;
+                bottom: 0;
+                left: 10px;
+                color: $white;
+                .item-title {
+                    font-weight: bold;
+                    font-size: 1.5rem;
+                }
+                .date {
+                    color: $warning;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $dark;
+    color: $light;
+    padding: 40px;
+    position: relative;
+    border-top: 5px solid $primary;
+    &#image {
+        padding: 600px 0 40px;
+        background-image: url('img/gedung.png');
+        background-size: cover;
+        background-position: center;
+        border: none;
+        .layer {
+            background: linear-gradient(#fff, rgba($light, 0%));
+            width: 100%;
+            height: 100%;
+            position: absolute; 
+            top: 0
+        }
+    }
+    .container {
+        position: relative;
+    }
+
+    .row {
+        justify-content: center;
+    }
+
+    strong {
+        display: block;
+        text-transform: uppercase;
+    }
+
+    span {
+        display: block;
+    }
+    
+    p {
+        margin-top: 10px;
+    }
+}
+
+$nav-link-color: $dark;
+$nav-link-font-size: 0.9rem;
+
+@import "../../node_modules/bootstrap/scss/nav";
+@import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/card";
+@import "../../node_modules/bootstrap/scss/tables";
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/alert";
+
+@import "../../node_modules/owl.carousel/src/scss/owl.carousel.scss";
+@import "../../node_modules/owl.carousel/src/scss/owl.theme.default.scss";
+
+.owl-stage-outer{
+    border-radius: 5px;
+}
+
+.owl-dot.active span {
+    width: 50px !important;
+    background: $primary !important;
+}

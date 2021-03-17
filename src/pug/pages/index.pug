@@ -1,8 +1,42 @@
 extends ../layouts/default.pug
 
 block content
-    .container.d-flex.flex-column.justify-content-md-center(style="height: 100vh")
-        .row.justify-content-center
-            .col-md-6.text-center
-                h1 UI First
-                p Let's start
+    div.container
+        div.row
+            div.col
+                section#banner.owl-carousel.owl-theme
+                    include ../components/card-banner.pug
+
+    section#main
+        div.container
+            section#utama.row
+                div.col-md-4
+                    include ../components/card-recent.pug
+                div.col-md-4
+                    include ../components/card-pengumuman.pug
+                div.col-md-4
+                    include ../components/card-agenda.pug
+        div.white-section
+            div.container
+                section
+                    div.col-md-12
+                        include ../components/card-seputar.pug
+        div.container
+            section.row
+                div.col-md-8
+                    include ../components/card-artikel.pug
+                div.col-md-4
+                    include ../components/card-harga.pug
+            section.row
+                div.col-md-8
+                    include ../components/card-nasional.pug
+                div.col-md-4
+                    include ../components/card-poll.pug
+        section#download
+            include ../components/card-download.pug
+        section#links
+            include ../components/card-links.pug
+        footer#image
+            div.layer
+        footer
+            include ../components/footer.pug
